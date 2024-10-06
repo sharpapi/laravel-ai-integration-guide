@@ -14,7 +14,6 @@ Welcome to the **SharpAPI Laravel Integration Guide**! This repository provides 
 3. [Installing the SharpAPI PHP Client](#installing-the-sharpapi-php-client)
 4. [Configuration](#configuration)
    - [Environment Variables](#environment-variables)
-   - [Service Provider (Optional)](#service-provider-optional)
 5. [Authentication with SharpAPI](#authentication-with-sharpapi)
 6. [Making API Calls](#making-api-calls)
    - [Example: Generating a Job Description](#example-generating-a-job-description)
@@ -106,30 +105,6 @@ Storing sensitive information like API keys in environment variables is a best p
    ```php
    $apiKey = env('SHARP_API_KEY');
    ```
-
-### Service Provider (Optional)
-
-If the SharpAPI PHP client offers a Laravel service provider, you can register it for easier integration. Check the SharpAPI documentation for availability.
-
-1. **Register the Service Provider**
-
-   Add the service provider to the `providers` array in `config/app.php`:
-
-   ```php
-   'providers' => [
-       // Other Service Providers
-
-       SharpAPI\SharpApiServiceProvider::class,
-   ],
-   ```
-
-2. **Publish Configuration (If Available)**
-
-   ```bash
-   php artisan vendor:publish --provider="SharpAPI\SharpApiServiceProvider"
-   ```
-
-   This step is optional and depends on whether SharpAPI provides a configuration file.
 
 ---
 
